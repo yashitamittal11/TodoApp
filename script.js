@@ -32,7 +32,7 @@ function saveTodo() {
   //check for duplicate todos
   const isduplicate = todos.find( element => element.value.toLowerCase() === todoValue.toLowerCase() );
 
-  if ( isEmpty ) {
+  if( isEmpty ) {
     showNotification( 'Todo is empty' );
   }
   else if( isduplicate ) {
@@ -40,8 +40,8 @@ function saveTodo() {
   }
   else {
     // Edit the existing todo
-    if (editingTodo !== -1) {
-      todos = todos.map((todo, index) => ({
+    if ( editingTodo !== -1 ) {
+      todos = todos.map( ( todo, index ) => ({
         ...todo,
         value: index === editingTodo ? todoInput.value : todo.value,
        }));
@@ -49,7 +49,7 @@ function saveTodo() {
        editingTodo = -1;
     }
     else {
-     //Push thenew todo in the array
+     //Push the new todo in the array
       todos.push({
         value: todoValue,
         checked: false,
@@ -60,7 +60,6 @@ function saveTodo() {
   
     //Empty the value of the todo once it is pushed to the array
     todoInput.value = '';
-    console.log(todos);
 }
 
 //Render Todo
